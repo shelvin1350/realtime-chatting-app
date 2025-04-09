@@ -1,6 +1,9 @@
 .chatarea {
     height: 78%;
     overflow-y: auto;
+    background-color: white;
+
+
 }
 
 .chatarea__message_receiver {
@@ -10,6 +13,7 @@
     padding: 10px;
     max-width: 70%;
     text-wrap: wrap;
+
     /* border-bottom: 1px solid #ccc; */
 }
 
@@ -23,7 +27,6 @@
     position: relative;
     left: 78%;
     transform: translate(-70%);
-    border-radius: 50px;
     /* border-bottom: 1px solid #ccc; */
 }
 
@@ -34,8 +37,8 @@
     padding: 10px;
     color: white;
     width: fit-content;
-    background-color: black;
-    border-radius: 10px;
+    background-color: #787cec;
+    border-radius: 10px 0px 10px 10px;
 }
 
 .chatarea__message_receiver p {
@@ -43,7 +46,7 @@
     padding: 10px;
     color: black;
     width: fit-content;
-    background-color: white;
-    border-radius: 10px;
+    background-color: #f0ecfc;
+    border-radius: 0px 10px 10px 10px;
 
 }

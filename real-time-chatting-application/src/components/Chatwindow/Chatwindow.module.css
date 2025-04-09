@@ -5,28 +5,39 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: white;
+    /* border-radius: 0px 30px 30px 0px; */
 }
 
 .chatwindow__header {
     height: 10%;
     border: solid;
-    border-color: grey;
+    border-color: rgb(232, 232, 232);
     border-width: 0px 0px 1px 0px;
     display: flex;
     align-items: center;
     padding-left: 10px;
     background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    justify-content: space-between;
+    width: 99%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+
 }
 
 .chatwindow__footer {
-    height: 7%;
-    border: solid;
+    height: 8%;
+    /* border: solid;
     border-color: grey;
-    border-width: 1px;
+    border-width: 1px; */
     display: flex;
     align-items: center;
-    background-color: white;
-    padding-left: 10px;
+    background-color: #f0ecfc;
+    padding: 10px 10px 10px 35px;
     width: 95%;
     position: relative;
     left: 50%;
@@ -41,6 +52,13 @@
     padding: 10px;
     font-size: 1rem;
 }
+
+
+.text__container i {
+    font-size: 22px;
+    cursor: pointer;
+}
+
 
 .chatwindow__footer button {
     all: unset;
@@ -58,14 +76,44 @@
 .profile__image {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 15%;
     margin-right: 10px;
 }
 
 .profile__image img {
     height: 100%;
     width: 100%;
-    border-radius: 50%;
+    border-radius: 15%;
+}
+
+.profile__container {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.chatwindow__header__icons {
+    display: flex;
+    justify-content: flex-end;
+    width: 10%;
+    font-size: 25px;
+    margin-right: 3%;
+    color: gray;
+    font-weight: lighter;
+
+}
+
+.text__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.sendIcon {
+    position: absolute;
+    right: 5%;
 }
 
 @media screen and (max-width: 768px) {

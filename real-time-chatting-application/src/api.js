@@ -1,12 +1,13 @@
-
-import axios from "axios";
+// src/api/index.js
 
 const BASE_URL = "http://localhost:8000";
+
+// ✅ Fetch Messages
 export const fetchMessages = async (senderId, receiverId) => {
     const token = localStorage.getItem("accessToken");
 
     const response = await fetch(
-        `http://localhost:8000/api/messages/?sender_id=${senderId}&reciever_id=${receiverId}`,
+        `${BASE_URL}/api/messages/?sender_id=${senderId}&reciever_id=${receiverId}`, // ✅ Correct spelling
         {
             method: "GET",
             headers: {
@@ -22,13 +23,14 @@ export const fetchMessages = async (senderId, receiverId) => {
     return await response.json();
 };
 
+// ✅ Send Message
 export const sendMessage = async ({ sender, receiver, text }) => {
     try {
-        const response = await fetch("http://localhost:8000/api/messages/create/", {
+        const response = await fetch(`${BASE_URL}/api/messages/create/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${localStorage.getItem("accessToken")}`, // Assuming you're using a JWT token
+                Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
             },
             body: JSON.stringify({ sender, reciever_id: receiver, text }),
         });
@@ -42,11 +44,12 @@ export const sendMessage = async ({ sender, receiver, text }) => {
         throw new Error("Failed to send message: " + error.message);
     }
 };
-// src/api/index.js
+
+// ✅ Fetch Users
 export const fetchUsers = async () => {
     const token = localStorage.getItem("accessToken");
 
-    const response = await fetch("http://localhost:8000/api/users/", {
+    const response = await fetch(`${BASE_URL}/api/users/`, {
         headers: {
             "Authorization": `Bearer ${token}`,
             "Content-Type": "application/json"
@@ -60,8 +63,9 @@ export const fetchUsers = async () => {
     return await response.json();
 };
 
+// ✅ Login User
 export const loginUser = async (username, password) => {
-    const response = await fetch("http://localhost:8000/api/token/", {
+    const response = await fetch(`${BASE_URL}/api/token/`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

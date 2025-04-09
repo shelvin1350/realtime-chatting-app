@@ -43,9 +43,10 @@ const Register = () => {
 
     return (
         <div className={styles.register}>
-            <h2>Register</h2>
+
             <form onSubmit={handleSubmit}>
-                <div>
+                <h2>Register</h2>
+                <div className={styles.formGroup}>
                     <label>Username</label>
                     <input
                         type="text"
@@ -55,7 +56,7 @@ const Register = () => {
                     />
                 </div>
 
-                <div>
+                <div class={styles.formGroup}>
                     <label>Password</label>
                     <input
                         type="password"
@@ -65,7 +66,7 @@ const Register = () => {
                     />
                 </div>
 
-                <div>
+                <div class={styles.formGroup}>
                     <label>Confirm Password</label>
                     <input
                         type="password"
@@ -78,6 +79,9 @@ const Register = () => {
                 {error && <p className={styles.error}>{error}</p>}
 
                 <button type="submit">Register</button>
+                <p className={styles.loginLink}>
+                    Already have an account? <a href="/login">Login</a>
+                </p>
             </form>
         </div>
     );

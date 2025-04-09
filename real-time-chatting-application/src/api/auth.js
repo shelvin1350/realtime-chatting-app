@@ -13,7 +13,9 @@ export const loginUser = async (username, password) => {
     }
 
     const data = await response.json();
-    // Store token
+
     localStorage.setItem("accessToken", data.access);
     localStorage.setItem("refreshToken", data.refresh);
+
+    localStorage.setItem("userId", data.user_id);
 };

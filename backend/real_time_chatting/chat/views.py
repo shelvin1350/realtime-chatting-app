@@ -4,6 +4,9 @@ from .serializer import MessageSerializer, RegisterSerializer
 from django.contrib.auth.models import User
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .serializer import CustomTokenObtainPairSerializer
+
 
 class MessageListView(APIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -80,3 +83,7 @@ class UserListView(APIView):
         users = User.objects.exclude(id=request.user.id)  # Exclude current user
         data = [{"id": user.id, "username": user.username} for user in users]
         return Response(data)
+    
+    
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer

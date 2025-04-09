@@ -1,0 +1,69 @@
+.sidebar {
+    width: 5%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 80vh;
+    font-size: 30px;
+
+}
+
+
+
+.sidebar p {
+    color: white;
+    font-size: 10px;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.sidebar i {
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.option__container,
+.option__container__chat {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.option__container__chat i,
+.option__container__chat p {
+    z-index: 1;
+}
+
+.option__container__chat::after {
+    position: absolute;
+    transform: translate(0%, -15%);
+    content: '';
+    width: 50px;
+    height: 60px;
+    background-color: #f0ecfc90;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+/* .sidebar i,
+.option__container__chat {
+    color: white;
+    cursor: pointer;
+} */
+
+@media (max-width: 1340px) {
+    .sidebar {
+        display: none;
+    }
+}

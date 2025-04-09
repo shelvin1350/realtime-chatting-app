@@ -1,18 +1,16 @@
 .userlist {
     width: 25%;
     height: 100vh;
-    border: solid;
-    border-width: 0px 1px 0px 0px;
-    border-color: grey;
     background-color: white;
     overflow: auto;
+    border-radius: 30px 0px 0px 30px;
+    border: solid;
+    border-color: rgb(232, 232, 232);
+    border-width: 0px 1px 0px 0px;
 }
 
 .chatHeader {
     height: 10%;
-    border: solid;
-    border-width: 0px 0px 1px 0px;
-    border-color: grey;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -22,35 +20,40 @@
     z-index: 1;
 }
 
+.input__container {
+    width: 95%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.chatHeader input {
+    background-color: #e0dcfc;
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    /* Left padding for icon */
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.chatHeader i {
+    position: absolute;
+    left: 15px;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #6c6c6c;
+}
+
 .userContainer {
     overflow-y: auto;
     font-weight: bold;
-    /* font-size: 2.2vw; */
-}
-
-.userContainer p {
-    margin: 0;
-    padding: 10px;
-    width: fit-content;
-    background-color: white;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.image__container {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    /* overflow: hidden; */
-    margin-right: 10px;
-}
-
-.image__container img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
+    width: 95%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
 
 .user__container {
@@ -60,10 +63,49 @@
     cursor: pointer;
     justify-content: flex-start;
     transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+/* ✅ Highlight selected user */
+.selected {
+    background-color: #f0ecfc;
+}
+
+.userContainer p {
+    margin: 0;
+    padding: 10px;
+    width: fit-content;
+    /* background-color: white; */
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.image__container {
+    width: 50px;
+    height: 50px;
+    border-radius: 15%;
+    margin-right: 6px;
+}
+
+.image__container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15%;
+    object-fit: cover;
+    object-position: center;
 }
 
 @media screen and (max-width: 768px) {
     .image__container {
         display: none;
+    }
+}
+
+
+@media (max-width: 1340px) {
+    .userlist {
+
+        border-radius: 0px 0px 0px 0px;
+
     }
 }
