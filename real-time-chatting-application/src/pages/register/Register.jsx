@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
+import styles from './Register.module.css';
+
 
 const Register = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState(null);
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
- 
+
         if (password !== confirmPassword) {
             setError("Passwords do not match!");
             return;
@@ -25,12 +27,12 @@ const Register = () => {
             });
 
             if (response.status === 201) {
-           
-                navigate("/login"); 
+
+                navigate("/login");
             }
         } catch (err) {
             if (err.response) {
-              
+
                 setError("Registration failed: " + err.response.data.detail || "Something went wrong");
             } else {
                 setError("Failed to register. Please try again.");
@@ -40,7 +42,7 @@ const Register = () => {
     };
 
     return (
-        <div className="register">
+        <div className={styles.register}>
             <h2>Register</h2>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -73,7 +75,7 @@ const Register = () => {
                     />
                 </div>
 
-                {error && <p className="error">{error}</p>}
+                {error && <p className={styles.error}>{error}</p>}
 
                 <button type="submit">Register</button>
             </form>
